@@ -80,23 +80,6 @@
     margin-left: 10px;
 }
 
-// 行内展示
-.sn-form-item--inline {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 10px;
-
-    .sn-form-item__label {
-        float: none;
-        display: inline-block;
-    }
-
-    .sn-form-item__content {
-        display: inline-block;
-        vertical-align: top;
-    }
-}
-
 // 标题文本位置
 .sn-form-item--label-top {
     .sn-form-item__label {
@@ -113,5 +96,22 @@
 .sn-form-item--label-left {
     .sn-form-item__label {
         text-align: left;
+    }
+}
+
+// 行内展示
+.sn-form-item--inline {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+
+    .sn-form-item__label {
+        float: none;
+        display: inline-block;
+    }
+
+    .sn-form-item__content {
+        display: inline-block;
+        vertical-align: top;
     }
 }

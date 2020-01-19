@@ -129,10 +129,10 @@ export interface ISnForm extends SnForm {
     /** 用于控制该表单内组件的尺寸 */
     size: SnUIComponentSize;
 
-    /** 是否显示校验错误信息-子优先级高于父-默认true */
+    /** 是否显示校验错误信息 */
     showMessage: boolean;
 
-    /** 以行内形式展示校验信息-子优先级高于父-默认false */
+    /** 以行内形式展示校验信息 */
     inlineMessage: boolean;
 
     /** 是否展示验证状态图标 */
@@ -160,13 +160,9 @@ export interface ISnForm extends SnForm {
      */
     formItemValidate(prop: string, valid: boolean, message: string): void;
 
-    /**
-     * 注册子组件
-     */
+    /**  注册子组件 */
     addField(field: ISnFormItem): void;
 
-    /**
-     * 移除子组件
-     */
+    /** 移除子组件 */
     removeField(field: ISnFormItem): void;
 }

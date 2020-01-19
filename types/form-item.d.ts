@@ -12,11 +12,8 @@ export declare interface SnFormItem extends SnUIComponent {
     /** 验证触发方式-blur,change, ['blur','change'] 默认blur触发 */
     trigger: string | string[];
 
-    /** 是否显示必填字段的标签旁边的红色星号-子优先级高于父-默认false */
+    /** 是否显示必填字段的标签旁边的红色星号 */
     required: boolean;
-
-    /** 行内表单模式-子优先级高于父-默认false */
-    inline: boolean;
 
     /** 标签文本 */
     label: string;
@@ -27,14 +24,11 @@ export declare interface SnFormItem extends SnUIComponent {
     /** 用于控制该表单内组件的尺寸 */
     size: SnUIComponentSize;
 
-    /** 是否显示校验错误信息-子优先级高于父-默认true */
+    /** 是否显示校验错误信息 */
     showMessage: boolean;
 
-    /** 以行内形式展示校验信息-子优先级高于父-默认false */
+    /** 以行内形式展示校验信息 */
     inlineMessage: boolean;
-
-    /** 是否展示验证状态图标-默认false */
-    statusIcon: boolean;
 
     /** 对该表单项进行重置，将其值重置为初始值并移除校验结果 */
     resetField(): void;
@@ -63,9 +57,7 @@ export interface ISnFormItem extends SnFormItem {
     /** 初始化验证 */
     onFieldInit(val: string | number): void;
 
-    /**
-     * 内部主动触发，验证当前表单项，view样式必定变更
-     */
+    /** 内部主动触发，验证当前表单项，view样式必定变更 */
     validateForInside(val: string | number): void;
 
     /**

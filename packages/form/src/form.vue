@@ -22,10 +22,7 @@
     })
     export default class SnForm extends Vue {
         // '!'=>ts非空断言
-        /** 是否显示必填字段的标签旁边的红色星号-子优先级高于父-默认false */
-        @Prop(Boolean)
-        public required: boolean;
-        /** 行内表单模式-子优先级高于父-默认false */
+        /** 行内表单模式 */
         @Prop(Boolean)
         public inline: boolean;
         /** 表单域标签的位置，right/left/top，如果值为left/right时，则需要设置label-width */
@@ -38,16 +35,19 @@
         @Prop(String)
         public size: SnUIComponentSize;
 
-        /** 是否显示校验错误信息-子优先级高于父-默认true */
+        /** 是否显示必填字段的标签旁边的红色星号 */
+        @Prop(Boolean)
+        public required: boolean;
+        /** 是否显示校验错误信息 */
         @Prop({type: Boolean, default: true})
         public showMessage: boolean;
-        /** 以行内形式展示校验信息-子优先级高于父-默认false */
+        /** 以行内形式展示校验信息 */
         @Prop(Boolean)
         public inlineMessage: boolean;
-        /** 是否展示验证状态图标 */
-        @Prop({type: Boolean, default: false})
-        public statusIcon: boolean;
 
+        /** 是否展示验证状态图标 */
+        @Prop(Boolean)
+        public statusIcon: boolean;
         /** 表单数据对象 */
         @Prop(Object)
         public model: { [key: string]: any };

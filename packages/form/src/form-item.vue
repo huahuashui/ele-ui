@@ -11,7 +11,7 @@
         <div class="sn-form-item__content" :style="contentStyle">
             <slot></slot>
             <transition name="sn-zoom-in-top">
-                <slot v-if="isShowMessage && validateState === 'error'" name="error">
+                <slot name="error" v-if="isShowMessage && validateState === 'error'">
                     <div class="sn-form-item__error"
                          :class="{'sn-form-item__error--inline': isInlineMessage}">
                         {{validateMessage}}
@@ -47,13 +47,6 @@
         @Prop([String, Array])
         public trigger: string | string[];
 
-        /** 是否显示必填字段的标签旁边的红色星号-子优先级高于父-默认false */
-        @Prop({type: Boolean, default: undefined})
-        public required: boolean;
-        /** 行内表单模式-子优先级高于父-默认false */
-        @Prop({type: Boolean, default: undefined})
-        public inline: boolean;
-
         /** 标签文本 */
         @Prop(String)
         public label: string;
@@ -63,15 +56,16 @@
         /** 用于控制该表单内组件的尺寸 */
         @Prop(String)
         public size: SnUIComponentSize;
-        /** 是否显示校验错误信息-子优先级高于父-默认true */
-        @Prop({type: Boolean, default: undefined})
+
+        /** 是否显示必填字段的标签旁边的红色星号 */
+        @Prop(Boolean)
+        public required: boolean;
+        /** 是否显示校验错误信息 */
+        @Prop(Boolean)
         public showMessage: boolean;
-        /** 以行内形式展示校验信息-子优先级高于父-默认false */
-        @Prop({type: Boolean, default: undefined})
+        /** 以行内形式展示校验信息 */
+        @Prop(Boolean)
         public inlineMessage: boolean;
-        /** 是否展示验证状态图标-默认false */
-        @Prop({type: Boolean, default: undefined})
-        public statusIcon: boolean;
 
         // 验证状态-validating/success/error
         public validateState: string = '';
@@ -100,20 +94,12 @@
             return parent;
         }
 
-        get isStatusIcon() {
-            let ret = this.snForm.statusIcon;
-            if (typeof this.statusIcon === 'boolean') {
-                ret = this.statusIcon;
-            }
-            return ret;
+        get isStatusIcon(): boolean {
+            return this.snForm.statusIcon;
         }
 
         get isInline(): boolean {
-            let ret = this.snForm.inline;
-            if (typeof this.inline === 'boolean') {
-                ret = this.inline;
-            }
-            return ret;
+            return this.snForm.inline;
         }
 
         get sizeClass(): SnUIComponentSize {
@@ -146,27 +132,27 @@
         }
 
         get isRequired(): boolean {
-            let ret = this.snForm.required;
-            if (typeof this.required === 'boolean') {
-                ret = this.required;
-            }
-            return ret;
+            // let ret = this.snForm.required;
+            // if (typeof this.required === 'boolean') {
+            //     ret = this.required;
+            // }
+            return this.snForm.required || this.required;
         };
 
         get isShowMessage(): boolean {
-            let ret = this.snForm.showMessage;
-            if (typeof this.showMessage === 'boolean') {
-                ret = this.showMessage;
-            }
-            return ret;
+            // let ret = this.snForm.showMessage;
+            // if (typeof this.showMessage === 'boolean') {
+            //     ret = this.showMessage;
+            // }
+            return this.snForm.showMessage || this.showMessage;
         }
 
         get isInlineMessage(): boolean {
-            let ret = this.snForm.inlineMessage;
-            if (typeof this.inlineMessage === 'boolean') {
-                ret = this.inlineMessage;
-            }
-            return ret
+            // let ret = this.snForm.inlineMessage;
+            // if (typeof this.inlineMessage === 'boolean') {
+            //     ret = this.inlineMessage;
+            // }
+            return this.snForm.inlineMessage || this.inlineMessage;
         }
 
         // 当前表单项的值
