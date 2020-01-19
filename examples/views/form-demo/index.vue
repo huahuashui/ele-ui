@@ -3,11 +3,11 @@
         <p>典型表单</p>
         <sn-form class="margin-t10" label-width="80px">
             <sn-form-item label="用户" prop="username">
-                <sn-input v-model="formModel.username"></sn-input>
+                <sn-input></sn-input>
             </sn-form-item>
             
             <sn-form-item label="密码" prop="password">
-                <sn-input v-model="formModel.password"></sn-input>
+                <sn-input></sn-input>
             </sn-form-item>
             
             <sn-form-item>
@@ -19,11 +19,11 @@
         <p class="margin-t20">行内表单</p>
         <sn-form class="margin-t10" :inline="true">
             <sn-form-item label="用户" prop="username">
-                <sn-input v-model="formModel.username"></sn-input>
+                <sn-input></sn-input>
             </sn-form-item>
             
             <sn-form-item label="密码" prop="password">
-                <sn-input v-model="formModel.password"></sn-input>
+                <sn-input></sn-input>
             </sn-form-item>
             
             <sn-form-item>
@@ -51,11 +51,11 @@
                  :label-position="labelPosition"
                  :size="size">
             <sn-form-item label="用户">
-                <sn-input v-model="formModel.username"></sn-input>
+                <sn-input></sn-input>
             </sn-form-item>
             
             <sn-form-item label="密码">
-                <sn-input v-model="formModel.password"></sn-input>
+                <sn-input></sn-input>
             </sn-form-item>
             
             <sn-form-item>
@@ -147,14 +147,15 @@
                 {
                     validator: (rule: any, value: string, callback: Function) => {
                         console.log('异步验证');
-                        // 可异步验证 - 验证结果异步处理完成才返回
-                        setTimeout(() => {
-                            if (value === '') {
-                                callback('请输入内容');
-                            } else {
+                        if (value === '') {
+                            callback('请输入内容');
+                        } else {
+
+                            // 可异步验证 - 验证结果异步处理完成才返回
+                            setTimeout(() => {
                                 callback();
-                            }
-                        }, 2000);
+                            }, 2000);
+                        }
                     }
                 }
             ]
