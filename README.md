@@ -26,7 +26,7 @@ new Vue({
 });
 ```
 
-接下来， 如果你只希望引入部分组件， 比如Button， 那么需要在main.ts中写入一下内容：
+接下来， 如果你只希望引入部分组件， 比如Button， 那么需要：
 ```javascript
 import Vue from "vue";
 import {Button} from "ele-ui";
