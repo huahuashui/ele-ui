@@ -1,0 +1,91 @@
+{
+    "defaultSeverity": "warning",
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**"
+        ]
+    },
+    "rules": {
+        "object-literal-sort-keys": false,
+        "no-console": false,
+        "ordered-imports": [
+            false
+        ],
+        "jsx-boolean-value": false,
+        "prefer-const": true,
+        // 禁止使用未使用的表达式语句
+        // "no-unused-expression": true,
+        // "no-this-assignment": true,
+        "no-non-null-assertion": true,
+        // 类型声明的冒号之前是否需要空格
+        "typedef-whitespace": true,
+        // 不允许在非class中使用 this关键字
+        "no-invalid-this": true,
+        // 禁止空接口
+        "no-empty-interface": false,
+        // 不需使用any类型
+        // "no-any": true,
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "one-line": [
+            true,
+            "check-catch",
+            "check-finally",
+            "check-else",
+            "check-open-brace",
+            "check-whitespace"
+        ],
+        // TS特性
+        "member-access": true,
+        // 设置成员对象的访问权限（public,private,protect)
+        "member-ordering": [
+            // 设置修饰符顺序
+            true,
+            {
+                "order": [
+                    "public-static-field",
+                    "public-static-method",
+                    "protected-static-field",
+                    "protected-static-method",
+                    "private-static-field",
+                    "private-static-method",
+                    "public-instance-field",
+                    "protected-instance-field",
+                    "private-instance-field",
+                    "public-constructor",
+                    "protected-constructor",
+                    "private-constructor",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method"
+                ]
+            }
+        ]
+    },
+    "jsRules": {
+        "object-literal-sort-keys": false
+    },
+    "typedef-whitespace": [
+        true,
+        {
+            "call-signature": "onespace",
+            "index-signature": "onespace",
+            "parameter": "onespace",
+            "property-declaration": "onespace",
+            "variable-declaration": "onespace"
+        }
+    ],
+    "no-implicit-dependencies": [
+        true,
+        [
+            "ele-ui"
+        ]
+    ],
+    "no-submodule-imports": [
+        true,
+        "ele-ui"
+    ]
+}
+// https://youtrack.jetbrains.com/_persistent/Capture(34).PNG?file=74-550923&c=false&updated=0

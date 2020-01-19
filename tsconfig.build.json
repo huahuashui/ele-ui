@@ -1,0 +1,31 @@
+{
+    "include": [
+        "src/**/*",
+        "packages/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "importHelpers": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "module": "esnext",
+        "target": "es5",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "allowJs": true,
+        "lib": [
+            "dom",
+            "es2017"
+        ],
+        "sourceMap": true,
+        "pretty": true,
+        "jsx": "preserve",
+        "jsxFactory": "h",
+        "baseUrl": ".",
+        "paths": {
+            "ele-ui/*": ["./*"]
+        }
+    }
+}

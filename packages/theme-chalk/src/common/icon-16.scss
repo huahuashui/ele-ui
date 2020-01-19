@@ -1,0 +1,136 @@
+/*****************16*16的图标********************/
+// 滑块
+.sn-icon-slider {
+    background: url(../images/slider-btn.png) no-repeat;
+    width: 11px;
+    height: 18px;
+    display: block;
+}
+
+// 验证中
+.sn-input-validating {
+    background-image: url(../images/input-loading.png);
+    animation: rotateLoading 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+// 旋转动画
+@keyframes rotateLoading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+// 下拉框-上拉/下拉
+.sn-input-drop-pull {
+    background-image: url(../images/input-drop-down.png);
+    transition: transform 0.3s;
+
+    &.z-pull-up {
+        transform: rotate(0deg);
+    }
+
+    &.z-drop-down {
+        transform: rotate(180deg);
+    }
+}
+
+.sn-16icon-bg {
+    background: url(../images/icon-16x16.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+// 清除图标
+.sn-input-clear {
+    @extend .sn-16icon-bg;
+    background-position: 0 0;
+
+    &:hover {
+        background-position: -16px 0;
+    }
+}
+
+// 密码展示图标
+.sn-input-view {
+    @extend .sn-16icon-bg;
+    background-position: 0 -16px;
+
+    &:hover {
+        background-position: -16px -16px;
+    }
+}
+
+// 验证成功
+.sn-input-success {
+    @extend .sn-16icon-bg;
+    background-position: 0 -32px;
+}
+
+// 验证错误
+.sn-input-error {
+    @extend .sn-16icon-bg;
+    background-position: 0 -48px;
+}
+
+// 清除
+.sn-icon-close {
+    @extend .sn-16icon-bg;
+    background-position: -16px 0;
+}
+
+// 下拉
+.sn-icon-dropDown {
+    @extend .sn-16icon-bg;
+    background-position: 0 -64px;
+}
+
+// 上拉
+.sn-icon-pullUp {
+    @extend .sn-16icon-bg;
+    background-position: 0 -80px;
+}
+
+// 问号
+.sn-icon-question {
+    @extend .sn-16icon-bg;
+    background-position: 0 -96px;
+}
+
+// 感叹号
+.sn-icon-info {
+    @extend .sn-16icon-bg;
+    background-position: 0 -96px;
+}
+
+// 文件
+.sn-icon-file {
+    @extend .sn-16icon-bg;
+    background-position: 0 -112px;
+}
+
+/*=== 分页icon ===*/
+.i-pading-first {
+    background: url(../images/common/page-first.png) center center no-repeat;
+    background-size: 12px 12px;
+}
+
+.i-pading-last {
+    background: url(../images/common/page-last.png) center center no-repeat;
+    background-size: 12px 12px;
+}
+
+.i-pading-up {
+    background: url(../images/common/page-pre.png) center center no-repeat;
+    background-size: 12px 12px;
+}
+
+.i-pading-down {
+    background: url(../images/common/page-next.png) center center no-repeat;
+    background-size: 12px 12px;
+}

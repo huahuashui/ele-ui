@@ -1,0 +1,48 @@
+@charset "utf-8";
+@import "./variable.scss";
+
+/* 清浮动
+ -------------------------- */
+@mixin clearFix {
+    $selector: &;
+
+    @at-root {
+        #{$selector}::before,
+        #{$selector}::after {
+            display: table;
+            content: "";
+        }
+
+        #{$selector}::after {
+            clear: both;
+        }
+    }
+}
+
+/* 单行省略
+ -------------------------- */
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Placeholder
+ -------------------------- */
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+
+    &::-moz-placeholder {
+        @content
+    }
+
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+// 盒模型
+@mixin border-box {
+    box-sizing: border-box;
+}

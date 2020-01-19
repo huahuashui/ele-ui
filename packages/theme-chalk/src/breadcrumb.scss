@@ -1,0 +1,71 @@
+.sn-breadcrumb-item {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+
+    &:after {
+        display: block;
+        content: '';
+        height: 0;
+        visibility: hidden;
+        clear: both;
+        overflow: hidden;
+    }
+
+    // 文字内容
+    .breadcrumb_inner {
+        float: left;
+        height: 15px;
+        line-height: 15px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #666;
+        transition: color .2s cubic-bezier(.645, .045, .355, 1);
+
+        &.is-link {
+            font-size: 14px;
+            color: #4394ff;
+            cursor: pointer;
+
+            &:hover {
+                color: #45a2ff;
+                cursor: pointer;
+            }
+        }
+    }
+
+    // 分隔图标
+    .breadcrumb_icon {
+        float: left;
+        width: 15px;
+        height: 15px;
+        margin: 0 6px;
+    }
+
+    // 分隔符
+    .breadcrumb_separator {
+        float: left;
+        height: 15px;
+        line-height: 15px;
+        margin: 0 9px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #b4bccc;
+    }
+
+    &:last-child {
+        .breadcrumb_inner:not(.is-link) {
+            font-weight: 700;
+            color: #333;
+            cursor: text;
+        }
+
+        .breadcrumb_icon {
+            display: none;
+        }
+
+        .breadcrumb_separator {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.sn-copy-text {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+
+    .ipt {
+        border: none;
+        width: 100%;
+    }
+}

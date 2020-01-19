@@ -1,0 +1,227 @@
+.sn-upload__input {
+    display: none;
+}
+
+.sn-upload__trigger {
+    display: inline-block;
+}
+
+.sn-upload__tip {
+    font-size: 12px;
+    color: #666;
+    margin-top: 7px;
+}
+
+// 预览图列表-文本
+.sn-upload-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .list-item {
+        position: relative;
+        width: 100%;
+        height: 24px;
+        line-height: 24px;
+        margin-top: 5px;
+        box-sizing: border-box;
+        transition: all .5s cubic-bezier(.55, 0, .1, 1);
+
+        &:hover {
+            .list-item_actions {
+                display: block;
+            }
+
+            .list-item_status {
+                display: none;
+            }
+        }
+    }
+
+    .list-item_img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #fbfdff;
+
+        img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    .list-item_name {
+        color: #606266;
+        transition: color .3s;
+    }
+
+    .list-item_status {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 14px;
+        height: 14px;
+        margin: auto 0;
+        border: 1px solid #67c23a;
+        border-radius: 50%;
+        box-sizing: border-box;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 4px;
+            width: 3px;
+            height: 6px;
+            border: 1px solid #67c23a;
+            border-top: 0;
+            border-left: 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    .list-item_actions {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        text-align: right;
+        padding-right: 2px;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    .list-item_progress {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -12px;
+    }
+
+    .list-item_file {
+        display: inline-block;
+        vertical-align: text-bottom;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .list-item_delete {
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+            color: #f3f3f3;
+        }
+    }
+}
+
+// 图片卡片
+.sn-upload-list--picture-card {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 7px;
+
+    .list-item {
+        display: inline-block;
+        width: 148px;
+        height: 148px;
+        margin-top: 8px;
+        margin-right: 8px;
+        background-color: #fbfdff;
+        border: 1px solid #c0ccda;
+        border-radius: 6px;
+        overflow: hidden;
+
+        // 卡片上传
+        &.is-card {
+            text-align: center;
+            line-height: 146px;
+            font-size: 36px;
+            color: #999;
+            border-style: dashed;
+            cursor: pointer;
+
+            &:hover {
+                border-color: #45a2ff;
+            }
+        }
+    }
+
+    .list-item_progress {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+// 图片列表
+.sn-upload-list--picture {
+    .list-item {
+        height: 92px;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #fff;
+        border: 1px solid #c0ccda;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .list-item_img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 70px;
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    .list-item_progress {
+        left: 90px;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+.sn-upload-list--picture-card,
+.sn-upload-list--picture {
+    .list-item_status {
+        right: -15px;
+        top: -6px;
+        width: 40px;
+        height: 24px;
+        margin: 0;
+        background-color: #13ce66;
+        border: none;
+        border-radius: 0;
+        transform: rotate(45deg);
+        box-shadow: 0 0 1pc 1px rgba(0, 0, 0, 0.2);
+
+        &:after {
+            top: 10px;
+            left: 16px;
+            width: 4px;
+            height: 8px;
+            border-width: 2px;
+            border-color: #fff;
+            transform: rotate(0);
+        }
+    }
+
+    .list-item_delete {
+        display: inline-block;
+        vertical-align: top;
+        height: 16px;
+        line-height: 16px;
+        color: #fff;
+    }
+}
+

@@ -1,0 +1,15 @@
+.sn-collapse-text {
+    cursor: pointer;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.collapse-open {
+        white-space: normal;
+    }
+
+    &.collapse-close {
+        white-space: nowrap;
+    }
+}

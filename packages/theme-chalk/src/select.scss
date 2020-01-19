@@ -1,0 +1,62 @@
+.sn-select-drop__item {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #5a5e66;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &.is-multiple {
+        padding-right: 30px;
+    }
+
+    &:hover {
+        background-color: #ecf6fd;
+    }
+
+    &.is-selected {
+        color: #3fa9fe;
+    }
+
+    &.is-disabled {
+        color: #b4bccc;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+//勾选图标
+.sn-select-drop__icon {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    margin: auto 0;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5px;
+        width: 5px;
+        height: 10px;
+        border: 2px solid #45a2ff;
+        border-top: 0;
+        border-left: 0;
+        border-radius: 0 0 1px 0;
+        transform-origin: center;
+        transform: rotate(45deg);
+        transition: transform 0.15s ease-in 0.05s;
+        box-sizing: content-box;
+    }
+}

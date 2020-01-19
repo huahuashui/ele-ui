@@ -1,0 +1,27 @@
+.sn-slider {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc; // #e4e7ed
+    border-radius: 3px;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.sn-slider__bar {
+    height: 100%;
+    background-color: #409eff;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    position: absolute;
+}
+
+// 按钮
+.sn-slider__button {
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    cursor: grabbing;
+    user-select: none;
+}

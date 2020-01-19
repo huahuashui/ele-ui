@@ -1,0 +1,195 @@
+@import "./common/variable.scss";
+@import "./common/mixin.scss";
+
+.sn-pagination {
+    font-size: 12px;
+    font-weight: 700;
+    color: $--color-text-regular;
+    white-space: nowrap;
+}
+
+.sn-pagination__button,
+.sn-pagination__pager,
+.sn-pagination__total,
+.sn-pagination__jumper,
+.sn-pagination__sizes {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.sn-pagination__button {
+    position: relative;
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 4px;
+    background-color: $--color-white;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    @include border-box();
+
+    &:not(.is-disabled):hover {
+        color: $--color-primary;
+
+        .prev-btn:after,
+        .next-btn:after {
+            border-color: $--color-primary;
+        }
+    }
+
+    &.is-disabled {
+        cursor: not-allowed;
+
+        .prev-btn:after,
+        .next-btn:after {
+            border-color: $--color-text-secondary;
+        }
+    }
+
+    .prev-btn,
+    .next-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 16px;
+        height: 16px;
+        margin: auto;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border: 2px solid $--color-text-regular;
+            border-left: none;
+            border-top: none;
+            @include border-box();
+        }
+    }
+
+    .prev-btn:after {
+        left: 6px;
+        transform: rotate(135deg);
+    }
+
+    .next-btn:after {
+        left: 2px;
+        transform: rotate(-45deg);
+    }
+
+    // 背景
+    &.is-background {
+        background-color: #f4f4f5;
+        border-radius: 2px;
+    }
+}
+
+.sn-pagination__pager {
+    user-select: none;
+
+    .pager-item {
+        display: inline-block;
+        vertical-align: top;
+        min-width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        padding: 0 4px;
+        background-color: $--color-white;
+        margin: 0;
+        cursor: pointer;
+        @include border-box();
+
+        &:hover {
+            color: $--color-primary;
+        }
+
+        &.is-active {
+            color: $--color-primary;
+            cursor: default;
+        }
+    }
+
+    &.is-disabled {
+        .pager-item {
+            cursor: not-allowed;
+
+            &:hover {
+                color: $--color-text-regular;
+            }
+        }
+    }
+
+    // 背景
+    &.is-background {
+        .pager-item {
+            background-color: #f4f4f5;
+            border-radius: 2px;
+
+            & + .pager-item {
+                margin-left: 10px;
+            }
+
+            &.is-active {
+                color: $--color-white;
+                background-color: $--color-primary;
+            }
+        }
+    }
+}
+
+.sn-pagination__jumper {
+    font-weight: 400;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .editor {
+        position: relative;
+        width: 45px;
+        z-index: 2;
+
+        .sn-input__inner {
+            padding: 0 2px;
+            text-align: center;
+        }
+    }
+
+    .sn-button {
+        position: relative;
+        margin-left: -1px;
+        z-index: 1;
+
+        &:hover {
+            z-index: 2;
+        }
+    }
+}
+
+.sn-pagination__total {
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.sn-pagination__sizes {
+    width: 70px;
+
+    .sn-input__inner {
+        text-align: center;
+    }
+}
+
+

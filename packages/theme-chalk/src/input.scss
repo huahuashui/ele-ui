@@ -1,0 +1,128 @@
+.sn-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+
+    // ===== 用到此组件的高级组件中的特殊样式-不额外做参数传进来 =====
+    &.is-focus .sn-input__inner {
+        border-color: #409EFF;
+    }
+
+    &.cursor-point .sn-input__inner {
+        cursor: pointer;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    // 下拉框中-不同风格样式，后续往后添加
+    // noBorderBg风格
+    &.noBorderBg .sn-input__inner {
+        color: #3fa9fe;
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    // button风格
+    &.button .sn-input__inner {
+        color: #fff;
+        border-color: #4394ff;
+        background-color: #4394ff;
+
+        &:disabled {
+            color: #333;
+            border-color: #ccc;
+            background-color: transparent;
+        }
+    }
+
+    // ===== end =====
+}
+
+.sn-input__inner {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #666;
+    transition: border-color .2s;
+
+    &:focus {
+        border-color: #409EFF;
+    }
+
+    &:disabled {
+        border-color: #ccc;
+        background-color: #f2f2f2;
+        cursor: not-allowed;
+    }
+
+    // 错误
+    &.is-error,
+    &.is-error:focus {
+        border-color: #f56c6c;
+    }
+
+    // 验证中
+    &.is-validating,
+    &.is-validating:focus {
+        border-color: #ccc;
+    }
+
+    // 成功
+    &.is-success,
+    &.is-success:focus {
+        /*border-color: #67c23a;*/
+    }
+}
+
+// 前置图标
+.sn-input__prefix {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s;
+    pointer-events: none;
+    font-size: 0;
+}
+
+// 后置图标
+.sn-input__suffix {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s;
+    font-size: 0;
+}
+
+// 图标标签
+.sn-input__icon {
+    display: block;
+    /*display: inline-block;*/
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+
+    & + .sn-input__icon {
+        margin-left: 2px;
+    }
+}
+
+.sn-input--prefix {
+    .sn-input__inner {
+        padding-left: 24px;
+    }
+}
+
+.sn-input--suffix {
+    .sn-input__inner {
+        padding-right: 24px;
+    }
+}

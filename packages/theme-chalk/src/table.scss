@@ -1,0 +1,118 @@
+.sn-table {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .hidden-columns {
+        position: absolute;
+        z-index: -1;
+        visibility: hidden;
+    }
+
+    .table-head {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .table-body {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .table-no-data {
+        height: 300px;
+        line-height: 300px;
+        font-size: 20px;
+        text-align: center;
+        border-top: 1px solid #e1e1e1;
+        width: 100%;
+        background: #fff;
+    }
+
+    // 序号列固定宽度
+    .ordinal-width {
+        width: 60px;
+    }
+
+    // checkbox
+    .table-check-label {
+        display: block;
+
+        &.is-bold {
+            font-weight: bold;
+        }
+
+        .sn-checkbox__label {
+            color: #333;
+        }
+    }
+
+    .fn-table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .fn-thead {
+        tr {
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            background-color: #eef3f8;
+        }
+
+        th {
+            text-align: left;
+            vertical-align: middle;
+            line-height: 2.2;
+            padding-left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            border-right: 1px solid #fff;
+            overflow: hidden;
+            word-wrap: normal;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-transform: capitalize;
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    .fn-tbody {
+        tr {
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: solid 1px #e1e1e1;
+            background-color: #fff;
+            font-size: 12px;
+
+            &.tr-gray {
+                background-color: #f9f9f9;
+            }
+        }
+
+        td {
+            text-align: left;
+            vertical-align: middle;
+            line-height: 2.2;
+            padding-left: 12px;
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: normal;
+
+            &:first-child {
+                padding-left: 10px;
+            }
+        }
+    }
+}

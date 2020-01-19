@@ -1,0 +1,117 @@
+.sn-zoom-in-top-enter-active,
+.sn-zoom-in-top-leave-active {
+    opacity: 1;
+    transform: scaleY(1);
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: center top;
+}
+
+.sn-zoom-in-top-enter,
+.sn-zoom-in-top-leave-active {
+    opacity: 0;
+    transform: scaleY(0);
+}
+
+.sn-form-item,
+.sn-form-item__content {
+    zoom: 1;
+
+    &:after {
+        content: '';
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+        clear: both;
+    }
+}
+
+// 表单中具体每项公共布局
+.sn-form-item {
+    margin-bottom: 12px;
+}
+
+// 左侧标题
+.sn-form-item__label {
+    float: left;
+    text-align: right;
+    vertical-align: middle;
+    padding-right: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #606266;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: default;
+
+    // 必填星号
+    &.is-required:before {
+        content: '*';
+        margin-right: 4px;
+        color: #f56c6c;
+    }
+}
+
+// 具体内容
+.sn-form-item__content {
+    position: relative;
+    font-size: 12px;
+}
+
+// 错误提示
+.sn-form-item__error {
+    position: relative;
+    top: 100%;
+    left: 0;
+    line-height: 1;
+    padding-top: 2px;
+    font-size: 12px;
+    color: #f56c6c;
+}
+
+// 错误提示
+.sn-form-item__error--inline {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+// 行内展示
+.sn-form-item--inline {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+
+    .sn-form-item__label {
+        float: none;
+        display: inline-block;
+    }
+
+    .sn-form-item__content {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+// 标题文本位置
+.sn-form-item--label-top {
+    .sn-form-item__label {
+        float: none;
+        display: inline-block;
+    }
+
+    .sn-form-item__content {
+        float: none;
+        display: block;
+    }
+}
+
+.sn-form-item--label-left {
+    .sn-form-item__label {
+        text-align: left;
+    }
+}

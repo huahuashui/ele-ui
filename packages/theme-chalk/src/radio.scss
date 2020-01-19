@@ -1,0 +1,106 @@
+.sn-radio {
+    display: inline-block;
+    color: #606266;
+    font-weight: 500;
+    user-select: none;
+    cursor: pointer;
+    zoom: 1;
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
+
+    & + .sn-radio {
+        margin-left: 10px;
+    }
+
+    // 选中
+    &.is-checked {
+        .sn-radio__label {
+            color: #4394ff;
+        }
+
+        .sn-radio__inner {
+            border-color: #4394ff;
+            background-color: #4394ff;
+
+            &:after {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+
+    // 禁选
+    &.is-disabled {
+        .sn-radio__label {
+            color: #c0c4cc;
+            cursor: not-allowed;
+        }
+
+        .sn-radio__inner {
+            background-color: #f5f7fa;
+            border-color: #ddd;
+            cursor: not-allowed;
+
+            &:after {
+                background-color: #c0c4cc;
+            }
+        }
+    }
+}
+
+.sn-radio__input {
+    position: relative;
+    float: left;
+    line-height: 1;
+    zoom: 1;
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+.sn-radio__label {
+    float: left;
+    font-size: 12px;
+
+    &.is-line {
+        line-height: 16px;
+    }
+
+    &.is-padding {
+        padding-left: 5px;
+    }
+}
+
+.sn-radio__inner {
+    position: relative;
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin: 1px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        content: "";
+        width: 4px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 100%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform .15s ease-in;
+    }
+}

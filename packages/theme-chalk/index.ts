@@ -1,0 +1,27 @@
+import "./src/common/icon-16.scss";
+import "./src/common/transition.scss";
+
+import "./src/slider.scss";
+import "./src/button.scss";
+import "./src/button-group.scss";
+import "./src/form.scss";
+import "./src/input.scss";
+import "./src/badge.scss";
+import "./src/progress.scss";
+import "./src/tab.scss";
+import "./src/breadcrumb.scss";
+import "./src/radio.scss";
+import "./src/checkbox.scss";
+import "./src/scroll.scss";
+import "./src/copy-text.scss";
+import "./src/pagination.scss";
+import "./src/select-base.scss";
+import "./src/select.scss";
+import "./src/table.scss";
+import "./src/switch.scss";
+import "./src/upload.scss";
+import "./src/popover.scss";
+import "./src/popconfirm.scss";
+import "./src/tooltip.scss";
+import "./src/tree.scss";
+import "./src/simple-layer.scss";

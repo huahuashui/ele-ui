@@ -1,0 +1,195 @@
+@import "./common/variable.scss";
+@import "./common/mixin.scss";
+
+.sn-button {
+    @mixin button-plain($color) {
+        $color-light-1: mix($--color-white, $color, 10%);
+        $color-light-4: mix($--color-white, $color, 40%);
+        $color-light-7: mix($--color-white, $color, 70%);
+        $color-light-8: mix($--color-white, $color, 80%);
+        $color-light-9: mix($--color-white, $color, 90%);
+
+        color: $color;
+        background-color: $color-light-9;
+        border-color: $color-light-7;
+
+        &:hover {
+            color: $--color-white;
+            background-color: $color-light-1;
+            border-color: $color-light-1;
+        }
+
+        &:active {
+            color: $--color-white;
+            background-color: $color;
+            border-color: $color;
+        }
+
+        &.is-disabled,
+        &.is-disabled:hover {
+            color: $color-light-4;
+            background-color: $color-light-9;
+            border-color: $color-light-8;
+        }
+    }
+
+    @mixin button-variant($color, $background-color) {
+        $background-light-1: mix($--color-white, $background-color, 10%);
+        $background-light-2: mix($--color-white, $background-color, 20%);
+
+        color: $color;
+        background-color: $background-color;
+        border: 1px solid $background-color;
+
+        &:hover {
+            background-color: $background-light-1;
+            border-color: $background-light-1;
+        }
+
+        &:active {
+            background-color: $background-color;
+            border-color: $background-color;
+        }
+
+        &.is-disabled,
+        &.is-disabled:hover {
+            color: $color;
+            background-color: $background-light-2;
+            border-color: $background-light-2;
+            cursor: not-allowed;
+        }
+
+        &.is-plain {
+            @include button-plain($background-color);
+        }
+    }
+
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition: $--all-transition;
+    white-space: nowrap;
+    outline: none;
+    cursor: pointer;
+
+    & + .sn-button {
+        margin-left: 10px;
+    }
+
+    @include clearFix();
+
+    // 默认按钮
+    color: $--color-text-primary;
+    background-color: $--color-white;
+    border: 1px solid $--border-color-base;
+
+    &:hover {
+        color: $--color-primary-light-1;
+        background-color: $--color-primary-light-9;
+        border-color: $--color-primary-light-7;
+    }
+
+    &.is-plain:hover {
+        color: $--color-primary-light-1;
+        background-color: $--color-white;
+        border-color: $--color-primary-light-1;
+    }
+
+    &:active,
+    &.is-plain:active {
+        color: $--color-primary;
+        border-color: $--color-primary;
+    }
+
+    &.is-disabled,
+    &.is-disabled:hover {
+        color: $--color-text-secondary;
+        background-color: $--color-white;
+        background-image: none;
+        border-color: $--border-color-lighter;
+        cursor: not-allowed;
+    }
+
+    &.is-plain.is-disabled,
+    &.is-plain.is-disabled:hover {
+        color: $--color-text-secondary;
+        background-color: $--color-white;
+        border-color: $--border-color-lighter;
+    }
+
+    // 文字按钮
+    &.sn-button--text,
+    &.sn-button--text.is-plain {
+        padding: 0;
+        color: $--color-primary-light-1;
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    &.sn-button--text:hover,
+    &.sn-button--text.is-plain:hover {
+        color: $--color-primary-light-2;
+    }
+
+    &.sn-button--text:active,
+    &.sn-button--text.is-plain:active {
+        color: $--color-primary;
+    }
+
+    &.sn-button--text.is-disabled,
+    &.sn-button--text.is-disabled:hover,
+    &.sn-button--text.is-plain.is-disabled,
+    &.sn-button--text.is-plain.is-disabled:hover {
+        color: $--color-text-secondary;
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    // 主要按钮
+    &.sn-button--primary {
+        @include button-variant($--color-white, $--color-primary);
+    }
+
+    // 成功按钮
+    &.sn-button--success {
+        @include button-variant($--color-white, $--color-success);
+    }
+
+    // 警告按钮
+    &.sn-button--warning {
+        @include button-variant($--color-white, $--color-warning);
+    }
+
+    // 危险按钮
+    &.sn-button--danger {
+        @include button-variant($--color-white, $--color-danger);
+    }
+
+    // 信息按钮
+    &.sn-button--info {
+        @include button-variant($--color-white, $--color-info);
+    }
+
+    // 按钮内部内容
+    .sn-button__icon {
+        display: inline-block;
+        vertical-align: top;
+        width: 16px;
+        height: 16px;
+        margin-top: 6px;
+    }
+
+    .sn-button__text {
+        font-weight: 500;
+
+        &.is-margin {
+            margin-left: 2px;
+        }
+    }
+}
