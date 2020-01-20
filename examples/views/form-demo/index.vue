@@ -68,12 +68,12 @@
         <sn-form class="margin-t10"
                  ref="formRefs"
                  label-width="130px"
-                 :status-icon="true"
         
                  :required="true"
                  :show-message="true"
                  :inline-message="false"
         
+                 :status-icon="true"
                  :model="formModel"
                  :rules="formRules"
                  @change="validateChange">
@@ -112,7 +112,7 @@
             username: 1,
             password: 2,
             something: null
-        };
+        } as Record<string, any>;
 
         protected formRules = {
             'username': [
@@ -159,7 +159,7 @@
                     }
                 }
             ]
-        };
+        } as Record<string, any>;
 
         protected labelPosition: string = 'right';
         protected size: string = 'small';

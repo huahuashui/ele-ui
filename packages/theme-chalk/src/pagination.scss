@@ -6,6 +6,64 @@
     font-weight: 700;
     color: $--color-text-regular;
     white-space: nowrap;
+    user-select: none;
+
+    .quick-prev,
+    .quick-next {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 16px;
+        height: 16px;
+        margin: auto;
+        display: none;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border: 2px double $--color-primary;
+            border-left: none;
+            border-top: none;
+            @include border-box();
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border: 2px double $--color-primary;
+            border-left: none;
+            border-top: none;
+            @include border-box();
+        }
+    }
+
+    .quick-prev:before {
+        left: 4px;
+        transform: rotate(135deg);
+    }
+
+    .quick-next:before {
+        left: 0;
+        transform: rotate(-45deg);
+    }
+
+    .quick-prev:after {
+        left: 8px;
+        transform: rotate(135deg);
+    }
+
+    .quick-next:after {
+        left: 4px;
+        transform: rotate(-45deg);
+    }
 }
 
 .sn-pagination__button,
@@ -95,9 +153,8 @@
 }
 
 .sn-pagination__pager {
-    user-select: none;
-
     .pager-item {
+        position: relative;
         display: inline-block;
         vertical-align: top;
         min-width: 30px;
@@ -112,6 +169,16 @@
 
         &:hover {
             color: $--color-primary;
+
+            .quick-prev,
+            .quick-next {
+                display: block;
+            }
+
+            .quick-text {
+                display: none;
+            }
+
         }
 
         &.is-active {
@@ -124,7 +191,7 @@
         .pager-item {
             cursor: not-allowed;
 
-            &:hover {
+            &:not(.is-active):hover {
                 color: $--color-text-regular;
             }
         }

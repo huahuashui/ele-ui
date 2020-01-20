@@ -22,8 +22,8 @@ export default class SnPagination extends Vue {
     @Prop({type: String, default: 'sizes, prev, pager, next, jumper, total'})
     public layout: string;
 
-    /** 页码按钮的数量，最小为1 */
-    @Prop({type: Number, default: 5})
+    /** 大于等于 3 且小于等于 21 的奇数 */
+    @Prop(Number)
     public buttonCount: number;
 
     /** 替代图标显示的上一页文字 */
@@ -49,6 +49,10 @@ export default class SnPagination extends Vue {
     /** 是否为分页按钮添加背景色 */
     @Prop(Boolean)
     public background: boolean;
+
+    /** 只展示一页 */
+    @Prop(Boolean)
+    public singlePage: boolean;
 
     /** 是否禁用 */
     @Prop(Boolean)
@@ -88,6 +92,7 @@ export default class SnPagination extends Vue {
             nextText,
             background,
             disabled,
+            singlePage,
 
             pageCount,
             internalTotal,
@@ -111,6 +116,7 @@ export default class SnPagination extends Vue {
             </next>,
             pager: <pager background={background}
                           disabled={disabled}
+                          single-page={singlePage}
                           page-count={pageCount}
                           current-page={internalCurrentPage}
                           button-count={buttonCount}

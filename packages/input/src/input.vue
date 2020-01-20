@@ -134,7 +134,7 @@
             return parent;
         }
 
-        get needStatusIcon() {
+        get needStatusIcon(): boolean {
             return this.snFormItem && this.snFormItem.isStatusIcon;
         }
 
