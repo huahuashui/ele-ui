@@ -94,11 +94,6 @@ const routerTree = [
         component: () => import(("../views/collapse-text-demo/collapse-text-demo.vue")),
     },
     {
-        name: "simpleLayerDemo",
-        path: "/simpleLayerDemo",
-        component: () => import(("../views/simple-layer-demo/index.vue")),
-    },
-    {
         name: "tableDemo",
         path: "/tableDemo",
         component: () => import(("../views/table-demo/index.vue")),
@@ -112,21 +107,6 @@ const routerTree = [
         name: "uploadDemo",
         path: "/uploadDemo",
         component: () => import(("../views/upload-demo/index.vue")),
-    },
-    {
-        name: 'popoverDemo',
-        path: '/popoverDemo',
-        component: ()=> import(("../views/popover-demo/index.vue"))
-    },
-    {
-        name: 'popconfirmDemo',
-        path: '/popconfirmDemo',
-        component: ()=> import(("../views/popconfirm-demo/index.vue"))
-    },
-    {
-        name: 'tooltipDemo',
-        path: '/tooltipDemo',
-        component: ()=> import(("../views/tooltip-demo/index.vue"))
     },
     {
         name: "treeDemo",

@@ -27,15 +27,11 @@ import SnTable from "../packages/table";
 import SnTableColumn from "../packages/table-column";
 import SnSwitch from "../packages/switch";
 import SnUpload from "../packages/upload";
-import SnPopover from "../packages/popover";
-import SnPopconfirm from "../packages/popconfirm";
-import SnTooltip from "../packages/tooltip";
 import SnTree from "../packages/tree";
 import TreeDirectiveService from "../packages/tree-service";
 import SnAutocomplete from "../packages/autocomplete";
 import SnAutocompleteBase from "../packages/autocomplete-base";
 import SnCollapseText from "../packages/collapse-text";
-import SnSimpleLayer from "../packages/simple-layer";
 import SnSpiner from "../packages/spiner";
 
 const components = [
@@ -66,9 +62,6 @@ const components = [
     SnTableColumn,
     SnSwitch,
     SnUpload,
-    SnPopover,
-    SnPopconfirm,
-    SnTooltip,
     SnTree,
     SnAutocomplete,
     SnAutocompleteBase,
@@ -114,19 +107,12 @@ export default {
     SnTableColumn,
     SnSwitch,
     SnUpload,
-    SnPopover,
-    SnPopconfirm,
-    SnTooltip,
     SnTree,
     SnCollapseText,
     SnSpiner,
-    // todo
     SnAutocomplete,
-    // todo
     SnAutocompleteBase,
-
 
     // 非组件-放在此处后
     TreeDirectiveService,
-    SnSimpleLayer
 }

@@ -26,13 +26,9 @@
     "table-column": "./packages/table-column/index.ts",
     "switch": "./packages/switch/index.ts",
     "upload": "./packages/upload/index.ts",
-    "popover": "./packages/popover/index.ts",
-    "popconfirm": "./packages/popconfirm/index.ts",
-    "tooltip": "./packages/tooltip/index.ts",
     "tree": "./packages/tree/index.ts",
     "TreeDirectiveService": "./packages/tree-service/index.ts",
     "autocomplete": "./packages/autocomplete/index.ts",
     "autocomplete-base": "./packages/autocomplete-base/index.ts",
-    "collapse-text": "./packages/collapse-text/index.ts",
-    "simple-layer": "./packages/simple-layer/index.ts"
+    "collapse-text": "./packages/collapse-text/index.ts"
 }

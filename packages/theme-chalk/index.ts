@@ -20,8 +20,4 @@ import "./src/select.scss";
 import "./src/table.scss";
 import "./src/switch.scss";
 import "./src/upload.scss";
-import "./src/popover.scss";
-import "./src/popconfirm.scss";
-import "./src/tooltip.scss";
 import "./src/tree.scss";
-import "./src/simple-layer.scss";
