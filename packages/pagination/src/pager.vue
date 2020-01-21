@@ -46,7 +46,7 @@
         public pageCount: number;
 
         /** 大于等于 3 且小于等于 21 的奇数 */
-        @Prop({type: Number, default: 3})
+        @Prop({type: Number, default: 5})
         public buttonCount: number;
 
         /** 是否禁用 */
@@ -77,14 +77,16 @@
                 buttonCount,
             } = this;
             const pages = [] as number[];
+            // 用于定位省略号出现位置
+            const halfButtonCount = Math.floor(buttonCount / 2);
             let showPrevMore = false;
             let showNextMore = false;
             // 出现快速跳页-需总页数大于按钮数
             if (pageCount > buttonCount) {
-                if (currentPage > buttonCount - 1) {
+                if (currentPage >= buttonCount - halfButtonCount) {
                     showPrevMore = true;
                 }
-                if (currentPage <= pageCount - buttonCount + 1) {
+                if (currentPage <= pageCount - halfButtonCount) {
                     showNextMore = true;
                 }
             }

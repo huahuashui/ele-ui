@@ -61,8 +61,6 @@ enumList.forEach(function (item) {
     enumExternalsEntry[file] = item.path;
 });
 
-console.log('externals', externals);
-
 exports.externals = [externals, nodeExternals()];
 
 exports.utilsExternalsEntry = utilsExternalsEntry;

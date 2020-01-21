@@ -38,13 +38,13 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [
-            // new TerserPlugin({
-            //     terserOptions: {
-            //         output: {
-            //             comments: false
-            //         }
-            //     }
-            // }),
+            new TerserPlugin({
+                terserOptions: {
+                    output: {
+                        comments: false
+                    }
+                }
+            }),
             new MiniCssExtractPlugin({
                 filename: 'theme-chalk/index.css',
             }),

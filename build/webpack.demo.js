@@ -13,6 +13,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = require('./config');
 const tsConfig = require.resolve('../tsconfig.dev.json');
+
 /*
  * 这封装了一个函数，进行传参，获取绝对路径，方便对import时引入地址的方便填写，path.join()是对多个字符串进行拼接，
  * 此时__dirname是build文件路径..代表再出去一层，就是文件的根路径，
@@ -20,7 +21,7 @@ const tsConfig = require.resolve('../tsconfig.dev.json');
  *
  * 其中：__dirname是当前文件所在项目的文件夹的绝对路径
  */
-function resolve (dir) {
+function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 
@@ -39,7 +40,6 @@ module.exports = {
         extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
         alias: {
             ...config.alias,
-            '@': resolve('src')//用@来代替src目录的绝对路径,此时就绝对路径就定位到了src目录
         },
 
     },

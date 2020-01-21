@@ -1,12 +1,11 @@
 import {SnUIComponent} from './component';
-import {Prop} from "vue-property-decorator";
 
 /** Pagination Component */
 export declare interface SnPagination extends SnUIComponent {
     /** 组件布局，子组件名用逗号分隔 */
     layout: string;
 
-    /** 大于等于 5 且小于等于 21 的奇数 */
+    /** 大于等于 3 且小于等于 21 的奇数 */
     buttonCount: number;
 
     /** 替代图标显示的上一页文字 */
