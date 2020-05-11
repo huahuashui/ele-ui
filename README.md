@@ -22,4 +22,4 @@ Vue.component(Button.name, Button);
 new Vue({
   el: '#app',
   render: h => h(App)
-});```
+});
